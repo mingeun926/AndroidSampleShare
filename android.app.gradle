@@ -1,0 +1,61 @@
+android {
+    compileSdk Versions.COMPILE_SDK_VERSION
+
+    defaultConfig {
+        minSdk Versions.MIN_SDK_VERSION
+        targetSdk Versions.TARGET_SDK_VERSION
+        versionName "1.0.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    flavorDimensions "flavors"
+
+    productFlavors {
+        dev {
+            versionCode 1
+            dimension "flavors"
+            manifestPlaceholders = [appLabel: "CleanArchitectureDev"]
+            buildConfigField("String", "URL", '"https://dapi.kakao.com"')
+            buildConfigField("String", "API_KEY", '"9d3f4bc6651d0f0395ba8e205456611a"')
+            buildConfigField("String", "API_SCOPE", '"API"')
+        }
+        stage{
+            versionCode 1
+            dimension "flavors"
+            manifestPlaceholders = [appLabel: "CleanArchitectureStage"]
+            buildConfigField("String", "URL", '"https://dapi.kakao.com"')
+            buildConfigField("String", "API_KEY", '"9d3f4bc6651d0f0395ba8e205456611a"')
+            buildConfigField("String", "API_SCOPE", '"API"')
+        }
+        prod {
+            versionCode 1
+            dimension "flavors"
+            manifestPlaceholders = [appLabel: "CleanArchitecture"]
+            buildConfigField("String", "URL", '"https://dapi.kakao.com"')
+            buildConfigField("String", "API_KEY", '"9d3f4bc6651d0f0395ba8e205456611a"')
+            buildConfigField("String", "API_SCOPE", '"API"')
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    configurations {
+        implementation.exclude group: 'org.jetbrains', module: 'annotations'
+    }
+    buildFeatures {
+        viewBinding = true
+        dataBinding = true
+    }
+}

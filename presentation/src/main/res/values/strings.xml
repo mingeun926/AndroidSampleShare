@@ -1,0 +1,10 @@
+<resources>
+    <string name="tab_text_search">검색</string>
+    <string name="tab_text_storage">보관함</string>
+    <string name="search_hint">검색어를 입력해주세요.</string>
+    <string name="alert_inquiry_save_data">사진을 저장하시겠습니까?</string>
+    <string name="alert_inquiry_remove_data">사진을 제거하시겠습니까?</string>
+    <string name="toast_success_save_data">사진을 저장하였습니다.</string>
+    <string name="toast_success_remove_data">사진을 제거하였습니다.</string>
+    <string name="toast_error_unknown">알 수 없는 에러가 발생하였습니다.</string>
+</resources>

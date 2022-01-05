@@ -1,0 +1,32 @@
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+}
+
+apply from: rootProject.file("android.module.gradle")
+
+dependencies {
+    // Module
+    implementation project(":domain")
+
+    // Kotlin
+    implementation Kotlin.KOTLIN_STDLIB
+    implementation Kotlin.COROUTINES_ANDROID
+
+    // AndroidX
+    implementation AndroidX.CORE_KTX
+    implementation AndroidX.APP_COMPAT
+    implementation AndroidX.ROOM_RUNTIME
+    kapt AndroidX.ROOM_COMPILER
+    implementation AndroidX.ROOM_KTX
+
+    // Koin
+    implementation Koin.KOIN_ANDROID
+    implementation Koin.KOIN_ANDROID_COMPAT
+
+    // Network
+    implementation Network.RETROFIT
+    implementation Network.RETROFIT_CONVERTER_GSON
+    implementation Network.OKHTTP_LOGGING_INTERCEPTOR
+}

@@ -1,0 +1,10 @@
+<resources>
+    <!-- App Main Theme -->
+    <style name="AppMainTheme" parent="Theme.MaterialComponents.Light.NoActionBar.Bridge">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:splitMotionEvents">false</item>
+        <item name="android:windowBackground">@color/white_ffffff</item>
+        <item name="colorAccent">@color/black_000000</item>
+    </style>
+</resources>

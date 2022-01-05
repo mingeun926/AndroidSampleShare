@@ -1,0 +1,46 @@
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+}
+
+apply from: rootProject.file("android.module.gradle")
+
+dependencies {
+    // Module
+    implementation project(":domain")
+
+    // Kotlin
+    implementation Kotlin.KOTLIN_STDLIB
+    implementation Kotlin.COROUTINES_ANDROID
+
+    // AndroidX
+    implementation AndroidX.CORE_KTX
+    implementation AndroidX.APP_COMPAT
+    implementation AndroidX.CONSTRAINT_LAYOUT
+    implementation AndroidX.LIFECYCLE_VIEWMODEL_KTX
+    implementation AndroidX.LIFECYCLE_LIVEDATA_KTX
+
+    // Google
+    implementation Google.MATERIAL
+
+    // Test Code
+    testImplementation TestCode.JUNIT
+    androidTestImplementation TestCode.ANDROID_JUNIT
+    androidTestImplementation TestCode.ESPRESSO_CORE
+
+    // Log Util
+    implementation LogUtil.LOGGER
+
+    // Koin
+    implementation Koin.KOIN_ANDROID
+    implementation Koin.KOIN_ANDROID_COMPAT
+
+    // Glide
+    implementation Glide.GLIDE
+    implementation Glide.GLIDE_COMPILER
+
+    // RxBind
+    implementation RxBind.RXBIND_CORE
+    implementation RxBind.RXBIND_APPCOMPAT
+}
